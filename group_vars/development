@@ -1,18 +1,16 @@
-mysql_root_password: devpw
-
 web_user: vagrant
 
 wordpress_sites:
-  example.com:
+  stacey.com:
     site_hosts:
-      - example.dev
+      - stacey.dev
     local_path: '../site' # path targeting local Bedrock site directory (relative to Ansible root)
     repo: git@github.com:roots/bedrock.git
     site_install: true
-    site_title: Example Site
+    site_title: stacey Site
     admin_user: admin
     admin_password: admin
-    admin_email: admin@example.dev
+    admin_email: admin@stacey.dev
     multisite:
       enabled: false
       subdomains: false
@@ -20,8 +18,8 @@ wordpress_sites:
       enabled: false
     system_cron: true
     env:
-      wp_home: http://example.dev
-      wp_siteurl: http://example.dev/wp
+      wp_home: http://stacey.dev
+      wp_siteurl: http://stacey.dev/wp
       wp_env: development
       db_name: example_dev
       db_user: example_dbuser

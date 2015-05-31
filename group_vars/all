@@ -1,7 +1,5 @@
 ---
 apt_cache_valid_time: 86400
-mariadb_dist: trusty
-mysql_user: root
 www_root: /srv/www
 
 mail_smtp_server: smtp.mandrillapp.com:587
@@ -11,6 +9,8 @@ mail_user: smtp_user
 mail_password: smtp_password
 
 hhvm: false
+
+memcached_sessions: false
 
 web_user: web
 web_group: www-data
