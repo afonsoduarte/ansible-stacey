@@ -50,8 +50,8 @@ galaxy_info:
   #  - 9.1
   #  - 9.1
   #  - 9.2
-  #- name: Ubuntu
-  #  versions:
+  - name: Ubuntu
+   versions:
   #  - all
   #  - lucid
   #  - maverick
@@ -61,7 +61,7 @@ galaxy_info:
   #  - quantal
   #  - raring
   #  - saucy
-  #  - trusty
+   - trusty
   #- name: SLES
   #  versions:
   #  - all
@@ -99,5 +99,5 @@ galaxy_info:
   #- networking
   #- packaging
   #- system
-  #- web
+  - web
 dependencies: []
