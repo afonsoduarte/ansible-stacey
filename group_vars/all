@@ -2,12 +2,6 @@
 apt_cache_valid_time: 86400
 www_root: /srv/www
 
-mail_smtp_server: smtp.mandrillapp.com:587
-mail_admin: admin@example.com
-mail_hostname: example.com
-mail_user: smtp_user
-mail_password: smtp_password
-
 hhvm: false
 
 memcached_sessions: false

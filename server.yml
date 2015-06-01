@@ -10,11 +10,11 @@
     - { role: ferm, tags: [ferm] }
     - { role: ntp }
     - { role: users, tags: [users] }
-    - { role: ssmtp, tags: [ssmtp mail] }
     - { role: php, when: not hhvm, tags: [php] }
     - { role: hhvm, when: hhvm, tags: [hhvm] }
     - { role: nginx, tags: [nginx] }
     - { role: logrotate, tags: [logrotate] }
     - { role: memcached, tags: [memcached] }
     - { role: composer, tags: [composer] }
+    - { role: dropbox, tags: [dropbox] }
     - { role: github-ssh-keys, tags: [github-ssh-keys], when: github_ssh_keys is defined }
