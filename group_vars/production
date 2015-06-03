@@ -2,6 +2,7 @@ sites:
   acircular.com:
     site_hosts:
       - acircular.com
+      - www.acircular.com
     local_path: '../site' # path targeting local Bedrock site directory (relative to Ansible root)
     repo: git@github.com:afonsoduarte/acircular.git
     branch: master
