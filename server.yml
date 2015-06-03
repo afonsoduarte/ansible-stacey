@@ -18,3 +18,4 @@
     - { role: composer, tags: [composer] }
     - { role: dropbox, tags: [dropbox] }
     - { role: github-ssh-keys, tags: [github-ssh-keys], when: github_ssh_keys is defined }
+    - { role: stacey-setup, tags: [stacey, stacey-setup] }

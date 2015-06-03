@@ -1,10 +1,10 @@
 ---
-- name: Deploy WP site
+- name: "Deploy Stacey site"
   hosts: web
   remote_user: "{{ web_user }}"
 
   vars:
-    project: "{{ wordpress_sites[site] }}"
+    project: "{{ sites[site] }}"
     project_root: "{{ www_root }}/{{ site }}"
 
   roles:

@@ -31,7 +31,5 @@
   notify: reload nginx
 
 - name: Create base WordPress config
-  template: src=wordpress.conf.j2 dest=/etc/nginx/wordpress.conf
+  template: src=stacey.conf.j2 dest=/etc/nginx/stacey.conf
 
-- name: Create base WordPress subdirectory Multisite config
-  template: src=wordpress_multisite_subdirectories.conf.j2 dest=/etc/nginx/wordpress_multisite_subdirectories.conf

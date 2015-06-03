@@ -33,9 +33,9 @@
   synchronize: src="{{ item.src }}" dest="{{ deploy_helper.new_release_path }}/{{ item.dest }}"
   with_items: project_local_files
 
-- name: Copy project templates
-  template: src="{{ item.src }}" dest="{{ deploy_helper.new_release_path }}/{{ item.dest }}" mode="{{ item.mode | default('0644') }}"
-  with_items: project_templates
+# - name: Copy project templates
+#   template: src="{{ item.src }}" dest="{{ deploy_helper.new_release_path }}/{{ item.dest }}" mode="{{ item.mode | default('0644') }}"
+#   with_items: project_templates
 
 - name: Run pre_build_commands in the new_release_path
   command: "{{ item.cmd }}"

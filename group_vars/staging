@@ -1,9 +1,9 @@
-wordpress_sites:
+sites:
   acircular.com:
     site_hosts:
       - staging.acircular.com
     local_path: '../site' # path targeting local Bedrock site directory (relative to Ansible root)
-    repo: git@github.com:roots/bedrock.git
+    repo: git@github.com:afonsoduarte/acircular.git
     branch: master
     ssl:
       enabled: false

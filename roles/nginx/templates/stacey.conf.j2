@@ -1,7 +1,22 @@
 # {{ ansible_managed }}
 
+
 location / {
-  try_files $uri $uri/ /index.php?$args;
+  # Stacey Rules
+  error_page 404 /404.html;
+
+  # Rewrite any calls to /render to the image parser
+  rewrite ^/render/. /app/parsers/slir/ break;
+
+  # Append trailling slash
+  # rewrite ^([^.]*[^/])$ $1/ last;
+
+  # Rewrite any calls to /* or /app to the index.php file
+  # rewrite ^/app/ /index.php last;
+  # rewrite ^/(.*)/$ /index.php?$1 last;
+
+  # Rewrite any file calls to the public directory
+  try_files /public$uri $uri $uri/ /index.php;
 }
 
 location ~ \.php$ {
