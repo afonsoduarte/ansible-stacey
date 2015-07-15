@@ -1,4 +1,4 @@
-wordpress_sites:
+sites:
   publicinterventions.org:
     site_hosts:
       - publicinterventions.org

@@ -1,6 +1,6 @@
 web_user: vagrant
 
-wordpress_sites:
+sites:
   stacey.com:
     site_hosts:
       - stacey.dev
