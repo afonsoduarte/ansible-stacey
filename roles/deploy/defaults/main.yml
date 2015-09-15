@@ -54,6 +54,9 @@ project_templates:
 project_shared_children:
   - path: content
     src: content
+  - path: app/_cache
+    mode: "0775"
+    src: cache
 
 # The project_environment is a list of environment variables added to the various *_commands
 # Example:
