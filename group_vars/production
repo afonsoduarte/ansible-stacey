@@ -9,3 +9,13 @@ sites:
     ssl:
       enabled: false
     system_cron: true
+  thegardensquareproject.org:
+    site_hosts:
+      - thegardensquareproject.org
+      - www.thegardensquareproject.org
+    local_path: '../garden-square-site'
+    repo: git@github.com:afonsoduarte/gardensquareproject-site.git
+    branch: master
+    ssl:
+      enabled: false
+    system_cron: true

@@ -9,7 +9,6 @@
     - { role: fail2ban, tags: [fail2ban] }
     - { role: ferm, tags: [ferm] }
     - { role: ntp }
-    - { role: ssmtp, tags: [ssmtp mail] }
     - { role: php, when: not hhvm, tags: [php] }
     - { role: hhvm, when: hhvm, tags: [hhvm] }
     - { role: php5-xdebug, tags: [xdebug], when: xdebug_install | default(False) }
@@ -18,3 +17,4 @@
     - { role: memcached, tags: [memcached] }
     - { role: composer, tags: [composer] }
     - { role: dropbox, tags: [dropbox] }
+    - { role: stacey-setup, tags: [stacey, stacey-setup] }
