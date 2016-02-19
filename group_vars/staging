@@ -1,18 +1,9 @@
 sites:
-  staging.publicinterventions.org:
+  staging.example.org:
     site_hosts:
-      - staging.publicinterventions.org
+      - staging.example.org
     local_path: '../site'
-    repo: git@github.com:afonsoduarte/publicinterventions-site.git
-    branch: master
-    ssl:
-      enabled: false
-    system_cron: true
-  staging.thegardensquareproject.org:
-    site_hosts:
-      - staging.thegardensquareproject.org
-    local_path: '../garden-square-site'
-    repo: git@github.com:afonsoduarte/gardensquareproject-site.git
+    repo: git@github.com:afonsoduarte/example-site.git
     branch: master
     ssl:
       enabled: false

@@ -1,11 +1,11 @@
 web_user: vagrant
 
 sites:
-  publicinterventions.dev:
+  example.dev:
     site_hosts:
-      - publicinterventions.dev
+      - example.dev
     local_path: '../site'
-    repo: git@github.com:afonsoduarte/publicinterventions-site.git
+    repo: git@github.com:afonsoduarte/example-site.git
     site_install: true
     ssl:
       enabled: false
