@@ -10,8 +10,7 @@
     - { role: ferm, tags: [ferm] }
     - { role: ntp }
     - { role: users, tags: [users] }
-    - { role: php, when: not hhvm, tags: [php] }
-    - { role: hhvm, when: hhvm, tags: [hhvm] }
+    - { role: php, tags: [php] }
     - { role: nginx, tags: [nginx] }
     - { role: logrotate, tags: [logrotate] }
     - { role: memcached, tags: [memcached] }
