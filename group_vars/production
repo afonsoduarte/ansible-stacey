@@ -1,10 +1,20 @@
 sites:
-  acircular.com:
+  publicinterventions.org:
     site_hosts:
-      - acircular.com
-      - www.acircular.com
-    local_path: '../site' # path targeting local Bedrock site directory (relative to Ansible root)
-    repo: git@github.com:afonsoduarte/acircular.git
+      - publicinterventions.org
+      - www.publicinterventions.org
+    local_path: '../site'
+    repo: git@github.com:afonsoduarte/publicinterventions-site.git
+    branch: master
+    ssl:
+      enabled: false
+    system_cron: true
+  thegardensquareproject.org:
+    site_hosts:
+      - thegardensquareproject.org
+      - www.thegardensquareproject.org
+    local_path: '../garden-square-site'
+    repo: git@github.com:afonsoduarte/gardensquareproject-site.git
     branch: master
     ssl:
       enabled: false

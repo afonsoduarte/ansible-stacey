@@ -9,7 +9,7 @@ location / {
   rewrite ^/render/. /app/parsers/slir/ break;
 
   # Rewrite any file calls to the public directory
-  try_files /public$uri $uri $uri/ /index.php?$uri;
+  try_files $uri $uri/ /public$uri /index.php?$uri;
 }
 
 location ~ /app {

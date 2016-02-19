@@ -54,9 +54,15 @@ project_templates:
 project_shared_children:
   - path: content
     src: content
-  - path: app/_cache
-    mode: "0775"
-    src: cache
+  - path: "app/_cache/pages"
+    src: "pages"
+    mode: "0777"
+  - path: "app/_cache/templates"
+    src: "templates"
+    mode: "0777"
+  - path: "app/_cache/images"
+    src: "images"
+    mode: "0777"
 
 # The project_environment is a list of environment variables added to the various *_commands
 # Example:
@@ -80,13 +86,14 @@ project_environment:
 #   - cmd: wp db import posts.sql
 project_pre_build_commands_local: []
 project_pre_build_commands: []
-project_post_build_commands:
-  - cmd: "composer install --no-ansi --no-dev --no-interaction --no-progress --optimize-autoloader --no-scripts"
+project_post_build_commands: []
+  # - path: app
+  #   cmd: chmod -R 0777 _cache
 
 # Post finalize commands are run with Ansible's `shell` module.
 # These are meant primarily for service restarts such as php5-fpm or memcached.
-project_post_finalize_commands:
-  - sudo service php5-fpm reload
+project_post_finalize_commands: []
+#  - sudo service php5-fpm reload
 
 # At the end of the role, the unfinished_filename is removed and the "current" symlink is set to
 # the release. If you need to perform your own actions before this happens, set "project_finalize"
