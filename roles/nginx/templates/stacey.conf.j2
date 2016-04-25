@@ -12,11 +12,6 @@ location / {
   try_files $uri $uri/ /public$uri /index.php?$uri;
 }
 
-location ~ /app {
-  deny all;
-  return 403;
-}
-
 location ~ \.php$ {
   try_files $uri =404;
   include fastcgi_params;
