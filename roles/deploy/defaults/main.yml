@@ -60,8 +60,11 @@ project_shared_children:
   - path: "app/_cache/templates"
     src: "templates"
     mode: "0777"
-  - path: "app/_cache/images"
-    src: "images"
+  - path: "app/_cache/images/rendered"
+    src: "rendered"
+    mode: "0777"
+  - path: "app/_cache/images/request"
+    src: "request"
     mode: "0777"
 
 # The project_environment is a list of environment variables added to the various *_commands
