@@ -1,11 +1,26 @@
 sites:
-  example.org:
+  afn.so:
     site_hosts:
-      - example.org
-      - www.example.org
+      - afn.so
+      - www.afn.so
+      - afonsoduarte.com
+      - www.afonsoduarte.com
+    site_domains:
+      - canonical: afn.so
+        redirects:
+          - www.afn.so
+          - afonsoduarte.com
+          - www.afonsoduarte.com
     local_path: '../site'
-    repo: git@github.com:afonsoduarte/example-site.git
+    repo: git@github.com:afonsoduarte/afn.so.git
     branch: master
     ssl:
+      enabled: true
+      provider: letsencrypt
+    dropbox:
       enabled: false
     system_cron: true
+
+site_hosts:
+  - afn.so
+  - afonsoduarte.com

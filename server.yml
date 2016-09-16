@@ -15,6 +15,7 @@
     - { role: logrotate, tags: [logrotate] }
     - { role: memcached, tags: [memcached] }
     - { role: composer, tags: [composer] }
-    - { role: dropbox, tags: [dropbox] }
+    - { role: dropbox, tags: [dropbox], when: dropbox_enabled }
     - { role: github-ssh-keys, tags: [github-ssh-keys], when: github_ssh_keys is defined }
+    - { role: letsencrypt, tags: [letsencrypt], when: letsencrypt_enabled }
     - { role: stacey-setup, tags: [stacey, stacey-setup] }

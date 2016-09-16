@@ -1,4 +1,12 @@
 ---
+nginx_path: /etc/nginx
 logs_root: /var/log/nginx/
 nginx_user: www-data
 strip_www: true
+nginx_ssl_path: "{{ nginx_path }}/ssl"
+
+
+# HSTS defaults
+nginx_hsts_max_age: 31536000
+nginx_hsts_include_subdomains: true
+nginx_hsts_preload: true

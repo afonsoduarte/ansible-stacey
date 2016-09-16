@@ -18,17 +18,14 @@ server {
 
 
   {% if item.value.ssl is defined and item.value.ssl.enabled | default(false) %}
-  include ssl.conf;
-  include ssl-stapling.conf;
-
-  add_header Strict-Transport-Security "max-age=31536000; includeSubdomains; preload";
-  add_header X-Frame-Options SAMEORIGIN;
-
-  ssl_certificate         /etc/nginx/ssl/{{ item.value.ssl.cert | basename }};
-  ssl_trusted_certificate /etc/nginx/ssl/{{ item.value.ssl.cert | basename }};
-  ssl_certificate_key     /etc/nginx/ssl/{{ item.value.ssl.key | basename }};
+    {{ lookup('template', 'https.conf.j2') }}
   {% endif %}
 
+  {% if item.value.ssl is not defined or not item.value.ssl.enabled | default(false) -%}
+    include acme-challenge-location.conf;
+  {% endif %}
+
+  include includes.d/{{ item.key }}/*.conf;
   include stacey.conf;
 }
 
@@ -36,6 +33,16 @@ server {
 server {
   listen 80;
   server_name {{ host }} www.{{ host }};
-  return 301 https://{{ host }}$request_uri;
+
+  {% if item.value.ssl.provider | default('manual') == 'letsencrypt' -%}
+  include acme-challenge-location.conf;
+
+  location / {
+    return 301 https://$host$request_uri;
+  }
+  {% else %}
+  return 301 https://$host$request_uri;
+  {% endif -%}
+
 }
 {% endfor %}

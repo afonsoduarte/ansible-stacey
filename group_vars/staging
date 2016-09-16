@@ -6,5 +6,8 @@ sites:
     repo: git@github.com:afonsoduarte/example-site.git
     branch: master
     ssl:
+      enabled: true
+      provider: letsencrypt
+    dropbox:
       enabled: false
     system_cron: true

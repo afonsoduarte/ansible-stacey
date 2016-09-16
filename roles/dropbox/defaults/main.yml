@@ -4,3 +4,5 @@ dropbox_version: "1.6.2"
 dropbox_tmp_deb: "/tmp/vagrant_{{dropbox_version}}.deb"
 dropbox_tmp_rpm: "/tmp/vagrant_{{dropbox_version}}.rpm"
 
+sites_using_dropbox: "[{% for name, site in sites.iteritems() if site.dropbox.enabled %}'{{ name }}',{% endfor %}]"
+dropbox_enabled: "{{ sites_using_dropbox | count > 0 }}"
